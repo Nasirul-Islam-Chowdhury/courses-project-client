@@ -4,7 +4,6 @@ import logo from "../../../assets/imges/logo.png"
 import {
     FaQuestionCircle,
     FaBloggerB,
-    FaInfoCircle,
     FaExpandArrowsAlt,
     FaAlignJustify
 } from 'react-icons/fa';
@@ -17,14 +16,13 @@ const Header = () => {
     const { info } = useContext(AuthContext);
     const [open, setOpen] = useState(false);
     return (
-        <div className="flex justify-between items-center h-[90px] bg-slate-800 text-white px-10 md:px-32">
+        <div className="flex font-custom justify-between items-center h-[100px] bg-slate-800 text-white px-10 md:px-32">
             <div className='flex justify-start items-center gap-2'>
                 <img src={logo} className="md:w-[80px] w-10" alt="" />
-                <Link to="/" className="md:text-2xl text-xl font-bold">Learning Point</Link>
+                <Link to="/" className="md:text-3xl text-xl font-bold">Learning Point</Link>
             </div>
-            <ul className={`md:flex gap-10 font-bold bg-slate-800 md:static absolute ${open ? 'top-16' : 'top-[-200px]'}`}>
-                <NavLink to="/" className="flex items-center gap-2 border-b-2">
-                    <FaInfoCircle />
+            <ul className={`md:flex gap-8 text-xl bg-slate-800 md:static absolute ${open ? 'top-16' : 'top-[-200px]'}`}>
+                <NavLink to="/" className="flex items-center gap-2">
                     <li>Courses</li>
                 </NavLink>
                 <NavLink to="/faq" className="flex items-center gap-2">
