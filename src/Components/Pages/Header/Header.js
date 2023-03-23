@@ -22,7 +22,7 @@ const Header = () => {
                 <Link to="/" className="md:text-3xl text-xl font-bold">Learning Point</Link>
             </div>
             <ul className={`md:flex gap-8 text-xl bg-slate-800 md:static absolute ${open ? 'top-16' : 'top-[-200px]'}`}>
-                <NavLink to="/" className="flex items-center gap-2">
+                <NavLink activeClassName="active" activeStyle={{color: "red"}} to="/" className="flex items-center gap-2">
                     <li>Courses</li>
                 </NavLink>
                 <NavLink to="/faq" className="flex items-center gap-2">
