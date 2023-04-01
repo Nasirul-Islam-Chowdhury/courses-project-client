@@ -59,7 +59,7 @@ const Register = () => {
             <div onSubmit={handleRegister} className="flex flex-col items-center pt-6 sm:justify-center sm:pt-0 bg-gray-50">
                 <div>
                     <a href="/">
-                        <h3 className="text-3xl py-3 mt-2 font-custom font-bold text-slate-700">
+                        <h3 className="text-3xl px-4 py-3 mt-2 font-custom font-bold text-slate-700">
                          Register to Stay With Learning Point!!
                         </h3>
                     </a>

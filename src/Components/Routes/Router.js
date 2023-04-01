@@ -12,6 +12,7 @@ import FilteredDuration from "../Pages/FilteredDuration/FilteredDuration";
 import User from '../../Components/Pages/Profile/User'
 import PrivateRoute from '../Pages/PrivateRoute/PrivateRoute'
 import Checkout from "../Pages/checkout/Checkout";
+import About from "../Pages/About/About";
 
 export const Router = createBrowserRouter([
     {
@@ -60,6 +61,10 @@ export const Router = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register />
+            },
+            {
+                path: '/about',
+                element: <About />
             },
             {
                 path: '/blog',

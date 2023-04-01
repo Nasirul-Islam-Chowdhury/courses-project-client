@@ -3,6 +3,7 @@ import { AuthContext } from '../../Contexts/AuthProvider';
 import logo from "../../../assets/imges/logo.png"
 import {
     FaUser,
+    FaDiscourse,
     FaBloggerB,
     FaExpandArrowsAlt,
     FaAlignJustify
@@ -35,6 +36,10 @@ const Header = () => {
                 <NavLink to="/blog" className="flex items-center gap-2">
                     <FaBloggerB />
                     <li>Blog</li>
+                </NavLink>
+                <NavLink to="/about" className="flex items-center gap-2">
+                    <FaDiscourse/>
+                    <li>About</li>
                 </NavLink>
 
                 {
