@@ -90,6 +90,7 @@ const Register = () => {
                             </label>
                             <div className="flex flex-col items-start">
                                 <input
+                                
                                 name="photoURL"
                                     type="text"
                                     
@@ -106,6 +107,7 @@ const Register = () => {
                             </label>
                             <div className="flex flex-col items-start">
                                 <input
+                                required
                                     type="email"
                                     name="email"
                                     className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 p-2"
@@ -122,6 +124,7 @@ const Register = () => {
                             </label>
                             <div className="flex flex-col items-start">
                                 <input
+                                required
                                     type="password"
                                     name="password"
                                     className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 p-2"
@@ -137,6 +140,7 @@ const Register = () => {
                             </label>
                             <div className="flex flex-col items-start">
                                 <input
+                                required
                                     type="password"
                                     name="password_confirmation"
                                     className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 p-2"
