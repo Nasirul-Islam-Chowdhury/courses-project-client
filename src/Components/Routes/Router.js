@@ -72,7 +72,7 @@ export const Router = createBrowserRouter([
             },
             {
                 path: '/profile',
-                element: <User />
+                element: <PrivateRoute><User /></PrivateRoute> 
             }
         ]
 

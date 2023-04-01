@@ -19,8 +19,8 @@ const Header = () => {
     const { user, logOut } = useContext(AuthContext);
     const [open, setOpen] = useState(false);
     const handleLogout = () => {
+        navigate("/");
         logOut();
-        navigate("/")
 
     }
     return (
