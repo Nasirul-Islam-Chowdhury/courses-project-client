@@ -38,7 +38,7 @@ const Header = () => {
                     <li>Blog</li>
                 </NavLink>
                 <NavLink to="/about" className="flex items-center gap-2">
-                    <FaDiscourse/>
+                    <FaDiscourse />
                     <li>About</li>
                 </NavLink>
 
@@ -49,14 +49,14 @@ const Header = () => {
                                 <GoSignIn />
                                 <li onClick={handleLogout}>Logout</li>
                             </Link>
-                         
-                          <NavLink title={user.displayName} to="/profile" className="flex items-center gap-2">
-                {user.photoURL? <>
-                <img src={user.photoURL} alt="" className="w-[30px] rounded-xl" />
-                </> :
-                 <FaUser/>}                                     
-                          
-                                      </NavLink>
+
+                            <NavLink title={user.displayName} to="/profile" className="flex items-center gap-2">
+                                {user.photoURL ? <>
+                                    <img src={user.photoURL} alt="" className="w-[30px] rounded-xl" />
+                                </> :
+                                    <FaUser />}
+
+                            </NavLink>
                         </>
                         :
                         <>
@@ -68,12 +68,12 @@ const Header = () => {
                                 <GoSignIn />
                                 <li>Signin</li>
                             </NavLink>
-                          
+
                         </>
                 }
-                    
 
-                
+
+
             </ul>
             <div onClick={() => setOpen(!open)} className="md:hidden cursor-pointer">
                 {

@@ -1,10 +1,17 @@
-import React from 'react';
+import React,{useRef} from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
+import ReactPrint from 'react-to-print'
 
 const CourseDetails = () => {
+  const ref = useRef();
     const course = useLoaderData();
     return (
-        <div className="p-4 md:w-4/6 mx-auto">
+       <div>
+        <div className='flex justify-end'>
+        <ReactPrint trigger={()=> <button className="px-6 py-2 rounded mt-2 bg-slate-800 text-white">Generate pdf</button>} content={()=>ref.current}/>
+
+        </div>
+         <div ref={ref} className="p-4 md:w-4/6 mx-auto">
         <div className="h-full  rounded-lg overflow-hidden">
           <img className="w-full mx-auto h-[350px]" src={course.image} alt="blog"/>
           <div className="mt-3">
@@ -34,6 +41,7 @@ const CourseDetails = () => {
           </div>
         </div>
       </div>
+       </div>
     );
 };
 export default CourseDetails;
