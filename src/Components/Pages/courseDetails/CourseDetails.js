@@ -19,7 +19,7 @@ const CourseDetails = () => {
             <p className="leading-relaxed mb-3">{course.description}</p>
             <div className='flex justify-start gap-10'>
             <h1 className="title-font text-xl font-medium mb-3">Course Level : <span className='font-bold font-custom text-gray-900'>{course.level}</span></h1>
-            <h1 className="title-font text-xl font-medium mb-3">Course Duration : <span className='font-bold font-custom text-gray-900'>{course.duration}</span></h1>
+            <h1 className="title-font text-xl font-medium mb-3">Course Duration : <span className='font-bold font-custom text-gray-900'>{course.duration} Weeks</span></h1>
             </div>
             <h1 className="title-font text-xl font-medium mb-3">Course Price : $<span className='font-bold font-custom text-gray-900'>{course.price}</span></h1>
             <div className="flex items-center flex-wrap ">
