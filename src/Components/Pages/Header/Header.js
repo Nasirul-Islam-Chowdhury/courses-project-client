@@ -24,20 +24,21 @@ const Header = () => {
 
     }
     return (
-        <div className="flex font-custom justify-between items-center h-[70px] bg-slate-800 text-white px-10 md:px-32">
+       <div className='bg-slate-800'>
+         <div className=" container flex font-custom justify-between items-center h-[70px]  text-white px-10 md:px-32">
             <div className='flex justify-start items-center gap-2'>
                 <img src={logo} className="md:w-[60px] w-10" alt="" />
                 <Link to="/" className="md:text-2xl text-xl font-bold">Learning Point</Link>
             </div>
-            <ul className={`md:flex gap-8  bg-slate-800 md:static absolute ${open ? 'top-16' : 'top-[-200px]'}`}>
-                <NavLink to="/" className='flex items-center gap-2'>
+            <ul className={`flex flex-col py-4 md:flex-row items-center justify-center gap-8 z-20 bg-slate-800 md:static absolute w-screen md:w-auto  left-0 ${open ? 'top-16' : 'top-[-300px]'}`}>
+                <NavLink onclick={()=> setOpen(false)} to="/" className='flex items-center gap-2'>
                     <li>Courses</li>
                 </NavLink>
-                <NavLink to="/blog" className="flex items-center gap-2">
+                <NavLink onclick={()=> setOpen(false)} to="/blog" className="flex items-center gap-2">
                     <FaBloggerB />
                     <li>Blog</li>
                 </NavLink>
-                <NavLink to="/about" className="flex items-center gap-2">
+                <NavLink onclick={()=> setOpen(false)} to="/about" className="flex items-center gap-2">
                     <FaDiscourse />
                     <li>About</li>
                 </NavLink>
@@ -45,12 +46,12 @@ const Header = () => {
                 {
                     user?.uid ?
                         <>
-                            <Link className="flex items-center gap-2">
+                            <Link onclick={()=> setOpen(false)} className="flex items-center gap-2">
                                 <GoSignIn />
                                 <li onClick={handleLogout}>Logout</li>
                             </Link>
 
-                            <NavLink title={user.displayName} to="/profile" className="flex items-center gap-2">
+                            <NavLink onclick={()=> setOpen(false)} title={user.displayName} to="/profile" className="flex items-center gap-2">
                                 {user.photoURL ? <>
                                     <img src={user.photoURL} alt="" className="w-[30px] rounded-xl" />
                                 </> :
@@ -60,11 +61,11 @@ const Header = () => {
                         </>
                         :
                         <>
-                            <NavLink to="/register" className="flex items-center gap-2">
+                            <NavLink onclick={()=> setOpen(false)} to="/register" className="flex items-center gap-2">
                                 <GiArchiveRegister />
                                 <li>Register</li>
                             </NavLink>
-                            <NavLink to="/signin" className="flex items-center gap-2">
+                            <NavLink onclick={()=> setOpen(false)} to="/signin" className="flex items-center gap-2">
                                 <GoSignIn />
                                 <li>Signin</li>
                             </NavLink>
@@ -82,6 +83,7 @@ const Header = () => {
             </div>
 
         </div>
+       </div>
     );
 };
 
