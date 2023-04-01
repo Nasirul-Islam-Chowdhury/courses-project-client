@@ -2,7 +2,7 @@ import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Course from '../Course/Course';
 
-const FilteredCategory = () => {
+const FilteredDuration = () => {
     const data = useLoaderData();
     return (
         <div className='grid md:grid-cols-3 grid-cols-1 p-3 md:px-10'>
@@ -13,4 +13,4 @@ const FilteredCategory = () => {
     );
 };
 
-export default FilteredCategory;
+export default FilteredDuration;

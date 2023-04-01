@@ -1,31 +1,98 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, {useContext, useState} from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../Contexts/AuthProvider';
+
 
 const Register = () => {
+    const navigate = useNavigate();
+    const [error, setError] = useState("")
+    const {register, googleSignin, handleGithubSignin,updateUserProfile} = useContext(AuthContext);
+    const handleRegister = (event)=>{
+        event.preventDefault();
+        const form = event.target;
+        const password = form.password.value;
+        const photoURL = form.photoURL.value;
+        const email = form.email.value;
+        const name = form.name.value;
+        const password_confirmation = form.password_confirmation.value;
+        if(password !== password_confirmation){
+          return  setError("password didn't match")
+        }
+        register(email, password)
+        .then(res =>{
+            console.log(res.user);
+            navigate('/')
+            handleUpdateUserProfile(name,photoURL)
+        })
+        .catch(error=> setError(error.message))
+
+        const handleUpdateUserProfile = (name, photoURL) => {
+            const profile = {
+              displayName: name,
+              photoURL: photoURL
+            }
+            updateUserProfile(profile)
+            .then(()=>  navigate('/'))
+            .catch(error=>setError(error.message))
+          }
+    }
+
+    const githubSignin = ()=>{
+        handleGithubSignin()
+        .then(res =>{
+            console.log(res.user)
+            navigate('/')
+        })
+        .catch(error=>setError(error))
+        }
+    const handleGoogleSignin = ()=>{
+        googleSignin()
+        .then(res =>{
+            console.log(res.user)
+            navigate('/')
+        })
+        .catch(error=>console.log(error))
+        }
+  
     return (
         <div>
-            <div className="flex flex-col items-center pt-6 sm:justify-center sm:pt-0 bg-gray-50">
+            <div onSubmit={handleRegister} className="flex flex-col items-center pt-6 sm:justify-center sm:pt-0 bg-gray-50">
                 <div>
                     <a href="/">
-                        <h3 className="text-2xl mt-2 font-custom font-bold text-slate-700">
-                          Stay With Learning Point!!
+                        <h3 className="text-3xl py-3 mt-2 font-custom font-bold text-slate-700">
+                         Register to Stay With Learning Point!!
                         </h3>
                     </a>
                 </div>
-                <div className="w-full px-6 py-4 mt-6 overflow-hidden bg-white shadow-md sm:max-w-lg sm:rounded-lg">
+                <div className="w-full px-6 py-4 mt-6 overflow-hidden bg-white shadow-lg sm:max-w-lg sm:rounded-lg">
                     <form>
                         <div>
                             <label
-                                htmlFor="name"
                                 className="block text-sm font-medium text-gray-700 undefined"
                             >
-                                Name
+                               Full Name
                             </label>
                             <div className="flex flex-col items-start">
                                 <input
                                     type="text"
                                     name="name"
 
+                                    className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 p-2"
+                                />
+                            </div>
+                        </div>
+                        <div className="mt-4">
+                            <label
+                                htmlFor="text"
+                                className="block text-sm font-medium text-gray-700 undefined"
+                            >
+                                PhotoURL
+                            </label>
+                            <div className="flex flex-col items-start">
+                                <input
+                                name="photoURL"
+                                    type="text"
+                                    
                                     className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 p-2"
                                 />
                             </div>
@@ -45,6 +112,7 @@ const Register = () => {
                                 />
                             </div>
                         </div>
+                      
                         <div className="mt-4">
                             <label
                                 htmlFor="password"
@@ -77,12 +145,12 @@ const Register = () => {
                         </div>
                         <Link
                             
-                            className="text-xs text-purple-600 hover:underline"
+                            className="text-xs text-red-600"
                         >
-                            Forget Password?
+                            {error}
                         </Link>
                         <div className="flex items-center mt-4">
-                            <button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-slate-700 rounded-md hover:bg-slate-600 focus:outline-none focus:bg-slate-600">
+                            <button type="submit" className="w-full px-4 py-2  text-white    bg-slate-700 rounded-md hover:bg-slate-600">
                                 Register
                             </button>
                         </div>
@@ -90,9 +158,9 @@ const Register = () => {
                     <div className="mt-4 text-grey-600">
                         Already have an account?{" "}
                         <span>
-                            <a className="text-purple-600 hover:underline" href="#">
+                            <Link to="/signin" className="text-purple-600 hover:underline" href="#">
                                 Log in
-                            </a>
+                            </Link>
                         </span>
                     </div>
                     <div className="flex items-center w-full my-4">
@@ -102,6 +170,7 @@ const Register = () => {
                     </div>
                     <div className="my-6 space-y-2">
                         <button
+                        onClick={handleGoogleSignin}
                             aria-label="Login with Google"
                             type="button"
                             className="flex items-center justify-center w-full p-2 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 dark:border-gray-400 focus:ring-violet-400"
@@ -116,6 +185,7 @@ const Register = () => {
                             <p>Login with Google</p>
                         </button>
                         <button
+                        onClick={githubSignin}
                             className="flex items-center justify-center w-full p-4 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 dark:border-gray-400 focus:ring-violet-400"
                         >
                             <svg

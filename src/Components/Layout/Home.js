@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom';
 import Category from '../Pages/Category/Category';
 import Duration from '../Pages/Duraion/Duration';
 
-const Details = () => {
+const Home = () => {
     return (
         <div className="flex">
         <div className="w-1/4 bg-slate-100">
@@ -17,4 +17,4 @@ const Details = () => {
     );
 };
 
-export default Details;
+export default Home;

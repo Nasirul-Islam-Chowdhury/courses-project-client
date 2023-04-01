@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
-const Category = () => {
+const Duration = () => {
     const [data, setData] = useState();
     const [loading, setLoading] = useState(true);
     
@@ -18,12 +18,12 @@ const Category = () => {
    }
     return (
         <div className='mt-3 px-2 md:px-8 '>
-            <h1 className="md:text-xl text-lg font-custom font-semibold italic">Course level</h1>
+            <h1 className=" md:text-xl text-lg font-custom font-semibold italic">Course duration</h1>
             <div className='py-5  md:ml-3'>
                 <div className='md:text-xl text-sm flex flex-col'>
                     {
                         data.map(c => 
-                            <NavLink to={`/details/:id/${c.level}`} key={c.id}className='p-3 hover:bg-white cursor-pointer'>{c.level} level courses</NavLink>
+                            <NavLink to={`/details/:id/abc/${c.duration}`} key={c.id}className='p-3 hover:bg-white cursor-pointer'>{c.duration} weeks</NavLink>
                         )
                     }
                 </div>
@@ -31,4 +31,4 @@ const Category = () => {
         </div>
     );
 };
-export default Category;
+export default Duration;

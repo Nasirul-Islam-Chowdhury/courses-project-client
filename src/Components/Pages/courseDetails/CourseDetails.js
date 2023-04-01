@@ -1,10 +1,10 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 
 const CourseDetails = () => {
     const course = useLoaderData();
     return (
-        <div className="p-4 w-4/6 mx-auto">
+        <div className="p-4 md:w-4/6 mx-auto">
         <div className="h-full  rounded-lg overflow-hidden">
           <img className="w-full mx-auto h-[350px]" src={course.image} alt="blog"/>
           <div className="mt-3">
@@ -14,7 +14,7 @@ const CourseDetails = () => {
             <h1 className="title-font text-xl font-medium mb-3">Course Level : <span className='font-bold font-custom text-gray-900'>{course.level}</span></h1>
             <h1 className="title-font text-xl font-medium mb-3">Course Duration : <span className='font-bold font-custom text-gray-900'>{course.duration}</span></h1>
             </div>
-            <h1 className="title-font text-xl font-medium mb-3">Course Price : <span className='font-bold font-custom text-gray-900'>{course.price}</span></h1>
+            <h1 className="title-font text-xl font-medium mb-3">Course Price : $<span className='font-bold font-custom text-gray-900'>{course.price}</span></h1>
             <div className="flex items-center flex-wrap ">
               <span className="text-gray-800 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
                 <svg className="w-4 h-4 mr-1" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
@@ -28,6 +28,9 @@ const CourseDetails = () => {
                 </svg>6
               </span>
             </div>
+            <Link to={`/checkout/${course.id}`} className='mt-2'>
+              <button className='px-6 py-2 bg-red-600 font-custom text-2xl text-white w-full'>Get Premium Access</button>
+            </Link>
           </div>
         </div>
       </div>

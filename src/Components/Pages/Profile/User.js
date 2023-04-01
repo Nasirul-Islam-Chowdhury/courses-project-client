@@ -1,10 +1,14 @@
-import React from 'react';
+import React,{useState, useContext} from 'react';
+import { useHref } from 'react-router-dom';
+import { AuthContext } from '../../Contexts/AuthProvider';
 
 const User = () => {
+    const { user } = useContext(AuthContext);
+   
     return (
-        <div>
-            <h2>user</h2>
-        </div>
+ <div>
+    {user?.email}
+ </div>
     );
 };
 

@@ -1,6 +1,8 @@
 import React from 'react';
 import Header from '../Pages/Header/Header';
 import {Outlet} from "react-router-dom"
+import Footer from '../Pages/Footer/Footer';
+
 
 
 const Main = () => {
@@ -8,6 +10,7 @@ const Main = () => {
         <div>
             <Header/>
            <Outlet/>
+          <Footer/>
         </div>
     );
 };
