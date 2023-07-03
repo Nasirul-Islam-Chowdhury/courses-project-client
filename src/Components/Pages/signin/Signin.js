@@ -29,8 +29,8 @@ const Signin = () => {
     }
     return (
 
-        <div onSubmit={handleSubmit} className="relative flex flex-col justify-center mt-5 overflow-hidden">
-            <div className="w-full p-6 m-auto bg-white rounded-md shadow-xl lg:max-w-xl">
+        <div onSubmit={handleSubmit} className=" flex flex-col justify-center mt-5 overflow-hidden min-h-[700px]">
+            <div className="w-full p-6 m-auto bg-white rounded-md shadow-xl lg:max-w-md ">
                 <h1 className="text-3xl font-semibold text-center text-slate-700 uppercase">
                     Sign in
                 </h1>

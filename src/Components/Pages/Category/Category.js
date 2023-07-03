@@ -22,8 +22,8 @@ const Category = () => {
             <div className='py-5  md:ml-3'>
                 <div className='md:text-xl text-sm flex flex-col'>
                     {
-                        data.map(c => 
-                            <NavLink to={`/details/:id/${c.level}`} key={c.id}className='p-3 hover:bg-white cursor-pointer'>{c.level} level courses</NavLink>
+                        data.map(category => 
+                            <NavLink to={`/details/:id/${category.level}`} key={category.id}className='p-3 hover:bg-white cursor-pointer'>{category.level} level courses</NavLink>
                         )
                     }
                 </div>

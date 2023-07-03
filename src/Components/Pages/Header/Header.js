@@ -9,6 +9,7 @@ import {
     FaAlignJustify
 } from 'react-icons/fa';
 import { GiArchiveRegister } from 'react-icons/gi';
+import { AiOutlineClose } from 'react-icons/ai';
 import { GoSignIn } from 'react-icons/go';
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import './Header.css'
@@ -31,14 +32,14 @@ const Header = () => {
                 <Link to="/" className="md:text-2xl text-xl font-bold">Learning Point</Link>
             </div>
             <ul className={`flex flex-col py-4 md:flex-row items-center justify-center gap-8 z-20 bg-slate-800 md:static absolute w-screen md:w-auto  left-0 ${open ? 'top-16' : 'top-[-300px]'}`}>
-                <NavLink onclick={()=> setOpen(false)} to="/" className='flex items-center gap-2'>
-                    <li>Courses</li>
+                <NavLink  to="/" className='flex items-center gap-2'>
+                    <li onClick={()=>setOpen(false)}>Courses</li>
                 </NavLink>
-                <NavLink onclick={()=> setOpen(false)} to="/blog" className="flex items-center gap-2">
+                <NavLink onClick={()=> setOpen(false)} to="/blog" className="flex items-center gap-2">
                     <FaBloggerB />
                     <li>Blog</li>
                 </NavLink>
-                <NavLink onclick={()=> setOpen(false)} to="/about" className="flex items-center gap-2">
+                <NavLink onClick={()=> setOpen(false)} to="/about" className="flex items-center gap-2">
                     <FaDiscourse />
                     <li>About</li>
                 </NavLink>
@@ -46,12 +47,12 @@ const Header = () => {
                 {
                     user?.uid ?
                         <>
-                            <Link onclick={()=> setOpen(false)} className="flex items-center gap-2">
+                            <Link onClick={()=> setOpen(false)} className="flex items-center gap-2">
                                 <GoSignIn />
                                 <li onClick={handleLogout}>Logout</li>
                             </Link>
 
-                            <NavLink onclick={()=> setOpen(false)} title={user.displayName} to="/profile" className="flex items-center gap-2">
+                            <NavLink onClick={()=> setOpen(false)} title={user.displayName} to="/profile" className="flex items-center gap-2">
                                 {user.photoURL ? <>
                                     <img src={user.photoURL} alt="" className="w-[30px] rounded-xl" />
                                 </> :
@@ -61,11 +62,11 @@ const Header = () => {
                         </>
                         :
                         <>
-                            <NavLink onclick={()=> setOpen(false)} to="/register" className="flex items-center gap-2">
+                            <NavLink onClick={()=> setOpen(false)} to="/register" className="flex items-center gap-2">
                                 <GiArchiveRegister />
                                 <li>Register</li>
                             </NavLink>
-                            <NavLink onclick={()=> setOpen(false)} to="/signin" className="flex items-center gap-2">
+                            <NavLink onClick={()=> setOpen(false)} to="/signin" className="flex items-center gap-2">
                                 <GoSignIn />
                                 <li>Signin</li>
                             </NavLink>
@@ -78,7 +79,7 @@ const Header = () => {
             </ul>
             <div onClick={() => setOpen(!open)} className="md:hidden cursor-pointer">
                 {
-                    open ? <FaExpandArrowsAlt className="text-white h-6 w-6" /> : <FaAlignJustify className="text-white h-6 w-6 " />
+                    open ? <AiOutlineClose className="text-white h-6 w-6" /> : <FaAlignJustify className="text-white h-6 w-6 " />
                 }
             </div>
 

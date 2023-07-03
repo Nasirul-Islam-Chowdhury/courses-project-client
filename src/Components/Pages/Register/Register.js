@@ -55,16 +55,10 @@ const Register = () => {
         }
   
     return (
-        <div>
+        <div className='min-h-[700px]'>
             <div onSubmit={handleRegister} className="flex flex-col items-center pt-6 sm:justify-center sm:pt-0 bg-gray-50">
-                <div>
-                    <a href="/">
-                        <h3 className="text-3xl px-4 py-3 mt-2 font-custom font-bold text-slate-700">
-                         Register to Stay With Learning Point!!
-                        </h3>
-                    </a>
-                </div>
-                <div className="w-full px-6 py-4 mt-6 overflow-hidden bg-white shadow-lg sm:max-w-lg sm:rounded-lg">
+               
+                <div className="w-full p-10  mt-6 overflow-hidden bg-white shadow-lg sm:max-w-lg sm:rounded-lg">
                     <form>
                         <div>
                             <label
@@ -76,25 +70,25 @@ const Register = () => {
                                 <input
                                     type="text"
                                     name="name"
-
-                                    className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 p-2"
+placeholder='Enter Your Name'
+                                    className="block w-full mt-1 border border-black rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 p-2"
                                 />
                             </div>
                         </div>
                         <div className="mt-4">
                             <label
                                 htmlFor="text"
-                                className="block text-sm font-medium text-gray-700 undefined"
+                                className="block text-sm font-medium text-gray-700"
                             >
                                 PhotoURL
                             </label>
                             <div className="flex flex-col items-start">
                                 <input
-                                
+                                placeholder='Enter Your Photourl'
                                 name="photoURL"
                                     type="text"
                                     
-                                    className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 p-2"
+                                    className="block w-full mt-1 border border-black rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 p-2"
                                 />
                             </div>
                         </div>
@@ -107,10 +101,11 @@ const Register = () => {
                             </label>
                             <div className="flex flex-col items-start">
                                 <input
+                                placeholder='Enter Your Email'
                                 required
                                     type="email"
                                     name="email"
-                                    className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 p-2"
+                                    className="block w-full mt-1  rounded-md shadow-sm  border border-black focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 p-2"
                                 />
                             </div>
                         </div>
@@ -124,26 +119,28 @@ const Register = () => {
                             </label>
                             <div className="flex flex-col items-start">
                                 <input
+                                placeholder='Write a Password'
                                 required
                                     type="password"
                                     name="password"
-                                    className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 p-2"
+                                    className="block w-full mt-1  border border-black rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 p-2"
                                 />
                             </div>
                         </div>
                         <div className="mt-4">
                             <label
                                 htmlFor="password_confirmation"
-                                className="block text-sm font-medium text-gray-700 undefined"
+                                className="block  text-sm font-medium text-gray-700 undefined"
                             >
                                 Confirm Password
                             </label>
                             <div className="flex flex-col items-start">
                                 <input
+                                placeholder='Confirm Password'
                                 required
                                     type="password"
                                     name="password_confirmation"
-                                    className="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 p-2"
+                                    className="block w-full mt-1  border border-black  rounded-md shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 p-2"
                                 />
                             </div>
                         </div>

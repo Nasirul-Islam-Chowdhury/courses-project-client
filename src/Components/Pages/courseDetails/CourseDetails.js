@@ -11,9 +11,9 @@ const CourseDetails = () => {
         <ReactPrint trigger={()=> <button className="px-6 py-2 rounded mt-2 bg-slate-800 text-white">Generate pdf</button>} content={()=>ref.current}/>
 
         </div>
-         <div ref={ref} className="p-4 md:w-4/6 mx-auto">
+         <div ref={ref} className="p-8 rounded-md lg:w-2/5 md:w-4/6 mx-auto bg-slate-100 ">
         <div className="h-full  rounded-lg overflow-hidden">
-          <img className="w-full mx-auto h-[350px]" src={course.image} alt="blog"/>
+          <img className="w-full mx-auto h-[350px] object-cover" src={course.image} alt="blog"/>
           <div className="mt-3">
             <h1 className="title-font text-3xl font-medium text-gray-900 mb-3">{course.title}</h1>
             <p className="leading-relaxed mb-3">{course.description}</p>

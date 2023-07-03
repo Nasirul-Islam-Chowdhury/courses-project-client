@@ -8,7 +8,7 @@ const About = () => {
         <h2 className='font-sans bg-gradient-to-r from-first to-second fw-[700] font-bold text-transparent bg-clip-text text-center text-2xl md:text-4xl py-8'>Hey there! Welcome to admin</h2>
         <div className='md:flex items-center justify-center gap-28 mt-14 md:px-52'>
             <div>
-                <img src={img}  className="h-[300px] md:w-[800px] rounded-xl mx-auto" alt="" />
+                <img src={img}  className="h-[300px] md:w-[800px] rounded-xl mx-auto object-cover" alt="" />
             </div>
             <div className='md:m-0 mt-4 px-4 pb-4'>
                 <h1 className='text-2xl font-bold font-sans mb-4'>Build Climber and Train Stopper</h1>
